@@ -1,0 +1,28 @@
+#!/usr/bin/bash
+#
+# Put customizations to your image in this file.
+
+PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
+
+# Exit if any commands fail
+set -o errexit
+
+# Ensure we have updated standard packages
+echo "* Updating standard packages.";
+pkg_delete -v nodejs smtools zoneinit
+pkg_add -v nodejs smtools zoneinit
+npm install smartdc -g
+npm install jsontool -g
+npm install manta -g
+
+# Configuring image specific packages
+echo "* Configuring image specific packages.";
+pkg_delete -f libuuid
+pkg_add -v libuuid postgresql93-9.3.0 postgresql93-adminpack postgresql93-datatypes postgresql93-monitoring postgresql93-pgbench postgresql93-pgcrypto
+
+# Clean up
+echo "* Cleaning up."
+rm -rf /root/*
+
+# Prepare image for provisioning
+sm-prepare-image -y

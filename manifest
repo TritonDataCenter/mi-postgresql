@@ -1,0 +1,8 @@
+name="postgresql"
+organization="Joyent"
+brand="Instance"
+version="13.4.0"
+description="A SmartOS 64-bit image pre-configured and optimized as a PostgreSQL 9.3.0 64-bit server with PgAdmin and monitoring plugins."
+homepage="http://wiki.joyent.com/jpc2/Postgresql+Instance"
+users="root admin pgsql"
+role="database"

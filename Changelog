@@ -1,0 +1,11 @@
+# Changelog for mi-postgresql
+
+postgresql-13.4.0
+* Base image is base64-13.3.1 (2013Q3)
+* PostgreSQL Server version is 9.3.0
+* PostgreSQL Admin Pack version is 9.3.0
+* PostgreSQL Monitoring version is 9.3.0
+* PostgreSQL Server tuned by default
+* Includes PostgreSQL loadable modules adminpack, pg_buffercache, pg_stat_statements, and auto_explain
+* Includes DTrace scripts from 'dtracetools' package
+* Initial release
